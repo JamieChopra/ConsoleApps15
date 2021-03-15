@@ -2,29 +2,41 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This application will recieve a value from the user of an amount of miles the user wishes to convert into feet,
+    /// the application using the conversion rate will calculate and output the amount in feet to the user.
     /// </summary>
     /// <author>
     /// Jamie Chopra version 0.1
     /// </author>
     public class DistanceConverter
     {
-
+        //Variable to store miles in decimals
         private double miles;
 
+        //Variable to store feet in decimals
         private double feet;
 
+        //Constant to store conversion rate of miles to feet
         public const int FEET_IN_MILES = 5280;
 
         /**
          *  Method that stores other methods and can be called within other classes
          */
-        public void Run() 
+        public void Run()
         {
-            OutputHeading();
+            OutputHeading("Distance Converter");
             InputMiles();
             CalculateFeet();
             OutputFeet();
+        }
+
+        public void ConvertFeetToMiles()
+        {
+            OutputHeading("Convert Feet to Miles");
+
+            Console.Write("Please input the number of feet: ");
+            string value = Console.ReadLine();
+            feet = Convert.ToDouble(value);
         }
 
         /*
@@ -54,11 +66,14 @@ namespace ConsoleAppProject.App01
             Console.WriteLine(miles + " miles is " + feet + " feet.");
         }
 
-        private void OutputHeading() 
+        /**
+         * Method for printing a heading
+         */
+        private void OutputHeading(string title) 
         {
             Console.WriteLine();
             Console.WriteLine("=============================");
-            Console.WriteLine("   Converting Miles to feet  ");
+            Console.WriteLine($"   {title}  ");
             Console.WriteLine("       by Jamie Chopra       ");
             Console.WriteLine("=============================");
             Console.WriteLine();
