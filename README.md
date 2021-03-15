@@ -4,7 +4,7 @@
 **Name**: | Jamie Chopra  |
 **Student ID**: | 22015094 |
 **Course:** | Cyber Security |
-**Module**: | CO453    |
+**Module**: | CO453     |
 **Started**: | January 2021 |    
 
 1. App01: Distance Converter
