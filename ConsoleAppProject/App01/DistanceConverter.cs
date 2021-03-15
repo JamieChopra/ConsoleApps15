@@ -19,6 +19,8 @@ namespace ConsoleAppProject.App01
         //Constant to store conversion rate of miles to feet
         public const int FEET_IN_MILES = 5280;
 
+        public const int MILES_IN_FEET = 1609;
+
         /**
          *  Method that stores other methods and can be called within other classes
          */
@@ -37,6 +39,18 @@ namespace ConsoleAppProject.App01
             Console.Write("Please input the number of feet: ");
             string value = Console.ReadLine();
             feet = Convert.ToDouble(value);
+            CalculateMiles();
+            OutputMiles();
+        }
+
+        private void OutputMiles()
+        {
+            Console.WriteLine($"{feet} feet is  {miles} miles.");
+        }
+
+        private void CalculateMiles()
+        {
+            miles = feet / FEET_IN_MILES;
         }
 
         /*
