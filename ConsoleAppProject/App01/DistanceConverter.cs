@@ -16,10 +16,13 @@ namespace ConsoleAppProject.App01
         //Variable to store feet in decimals
         private double feet;
 
+        //Variable to store metres in decimals
+        private double metres;
+
         //Constant to store conversion rate of miles to feet
         public const int FEET_IN_MILES = 5280;
-
-        public const int MILES_IN_FEET = 1609;
+        //Constant to store conversion rate of miles to metres
+        public const int MILES_IN_METRES = 1609;
 
         /**
          *  Method that stores other methods and can be called within other classes
@@ -32,6 +35,9 @@ namespace ConsoleAppProject.App01
             OutputFeet();
         }
 
+        /**
+         * Method for converting feet into miles
+         */
         public void ConvertFeetToMiles()
         {
             OutputHeading("Convert Feet to Miles");
@@ -43,11 +49,17 @@ namespace ConsoleAppProject.App01
             OutputMiles();
         }
 
+        /**
+         * Method for printing the amount of miles based on feet the user has input
+         */
         private void OutputMiles()
         {
             Console.WriteLine($"{feet} feet is  {miles} miles.");
         }
 
+        /**
+         * Calcuates the amount of miles based on the amount of feet the user has input
+         */
         private void CalculateMiles()
         {
             miles = feet / FEET_IN_MILES;
@@ -78,6 +90,36 @@ namespace ConsoleAppProject.App01
         private void OutputFeet() 
         {
             Console.WriteLine(miles + " miles is " + feet + " feet.");
+        }
+
+        /**
+         * Converts user input miles to metres and displays the result.
+         */
+        public void ConvertMilesToMetres() 
+        {
+            OutputHeading("Convert Miles to Metres");
+
+            Console.Write("Please input the number of Miles: ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
+            CalculateMetres();
+            OutputMetres();
+        }
+
+        /**
+         * Method for calculating the amount of metres
+         */
+        private void CalculateMetres()
+        {
+            metres = miles * MILES_IN_METRES;
+        }
+
+        /**
+         * Prints string presenting the amount of metres in the amount of miles the user has input.
+         */
+        private void OutputMetres()
+        {
+            Console.WriteLine(miles + " miles is " + metres + " metres.");
         }
 
         /**
