@@ -1,4 +1,5 @@
-﻿namespace ConsoleAppProject.App01
+﻿using System;
+namespace ConsoleAppProject.App01
 {
     /// <summary>
     /// Please describe the main features of this App
@@ -18,7 +19,9 @@
          */
         public void Run() 
         {
-        
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
         }
 
         /*
@@ -27,7 +30,9 @@
          */
         private void InputMiles() 
         {
-            
+            Console.Write("Please input the number of miles: ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
         }
 
         /**
