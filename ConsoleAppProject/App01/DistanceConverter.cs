@@ -59,23 +59,32 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
 
-            fromUnit = SelectUnit("Please enter the unit you wish to convert ");
-            toUnit = SelectUnit("Please enter the unit you wish to convert ");
+            fromUnit = SelectUnit("\nPlease enter the unit you wish to convert: ");
+            toUnit = SelectUnit("\nPlease enter the unit you wish to convert: ");
 
-            fromDistance = InputDistance($"Please input the number of {fromUnit}: ");
+            Console.WriteLine($"\nConverting {fromUnit} to {toUnit}");
+
+            fromDistance = InputDistance($" \nPlease input the number of {fromUnit}: ");
 
             CalculateDistance();
             OutputDistance();
         }
 
+        /**
+         * Method that determines which units will be used and therefore 
+         * which calculation will take place
+         */
         private string SelectUnit(string prompt)
         {
             string choice = chooseUnit(prompt);
             string unit = ExecuteChoice(choice);
-            Console.WriteLine($"You have chosen {unit}");
+            Console.WriteLine($"\nYou have chosen {unit}");
             return unit;
         }
 
+        /**
+         * Method that allows for user input to determine which unit has been selected
+         */
         private static string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
@@ -96,6 +105,11 @@ namespace ConsoleAppProject.App01
             return null;
         }
 
+        /**
+         * Method that assigns each unit with a number
+         * The user can enter a number associated to a unit
+         * The number is read by the method and stored in a variable
+         */
         private static string chooseUnit(string prompt)
         {
             Console.WriteLine();
@@ -127,6 +141,10 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($" {fromDistance}  {fromUnit} is {toDistance} {toUnit}" );
         }
 
+        /**
+         * Contains if statements in which the units are determined by user input
+         * The method scans the if statements to identify which calculation will be used.
+         */
         private void CalculateDistance() 
         {
             if (fromUnit == MILES && toUnit == FEET) 
