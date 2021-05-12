@@ -60,7 +60,41 @@ namespace ConsoleAppProject.App01
 
         private string SelectUnit(string prompt)
         {
-            throw new NotImplementedException();
+            string choice = chooseUnit(prompt);
+            return ExecuteChoice(choice);
+        }
+
+        private static string ExecuteChoice(string choice)
+        {
+            if (choice.Equals("1"))
+            {
+                return FEET;
+            }
+
+            else if (choice.Equals("2"))
+            {
+                return METRES;
+            }
+
+            else if (choice.Equals("3"))
+            {
+                return MILES;
+            }
+
+            return null;
+        }
+
+        private static string chooseUnit(string prompt)
+        {
+            Console.WriteLine();
+            Console.WriteLine($" 1. {FEET}");
+            Console.WriteLine($" 2. {METRES}");
+            Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine();
+
+            Console.Write(prompt);
+            string choice = Console.ReadLine();
+            return choice;
         }
 
         /**
