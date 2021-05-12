@@ -23,15 +23,24 @@ namespace ConsoleAppProject.App01
         public const int FEET_IN_MILES = 5280;
         //Constant to store conversion rate of miles to metres
         public const int MILES_IN_METRES = 1609;
+        //Constant to store conversion rate of metres to feet
+        public const double METRES_IN_FEET = 3.28084;
 
+        //Constant to store the string Feet which is used to identify when choosing a unit to convert
         public const string FEET = "Feet";
+        //Constant to store the string Metres which is used to identify when choosing a unit to convert
         public const string METRES = "Metres";
+        //Constant to store the string Miles which is used to identify when choosing a unit to convert
         public const string MILES = "Miles";
 
+        //String to store variable of the unit you wish to convert
         private string fromUnit;
+        //String to store variable of the unit you wish to convert to
         private string toUnit;
 
+        //String to store variable of the distance of the unit in which you enter
         private double fromDistance;
+        //String to store variable of the distance of the unit you have converted to
         private double toDistance;
 
         //Constructor to set starting values
@@ -48,20 +57,23 @@ namespace ConsoleAppProject.App01
          */
         public void ConvertingDistance() 
         {
-            fromUnit = SelectUnit("Please select from distance unit ");
-            toUnit = SelectUnit("Please select the to distance unit ");
+            OutputHeading();
 
-            OutputHeading($"Convert {fromUnit} to {toUnit}");
+            fromUnit = SelectUnit("Please enter the unit you wish to convert ");
+            toUnit = SelectUnit("Please enter the unit you wish to convert ");
+
             fromDistance = InputDistance($"Please input the number of {fromUnit}: ");
 
-            //CalculateFeet();
+            CalculateDistance();
             OutputDistance();
         }
 
         private string SelectUnit(string prompt)
         {
             string choice = chooseUnit(prompt);
-            return ExecuteChoice(choice);
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"You have chosen {unit}");
+            return unit;
         }
 
         private static string ExecuteChoice(string choice)
@@ -115,14 +127,47 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($" {fromDistance}  {fromUnit} is {toDistance} {toUnit}" );
         }
 
+        private void CalculateDistance() 
+        {
+            if (fromUnit == MILES && toUnit == FEET) 
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * MILES_IN_METRES;
+            }
+
+            else if (fromUnit == FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / METRES_IN_FEET;
+            }
+
+            else if (fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * METRES_IN_FEET;
+            }
+
+            else if (fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / MILES_IN_METRES;
+            }
+        }
+
         /**
          * Method for printing a heading
          */
-        private void OutputHeading(string title) 
+        private void OutputHeading() 
         {
             Console.WriteLine();
             Console.WriteLine("=============================");
-            Console.WriteLine($"   {title}  ");
+            Console.WriteLine("      Distance Converter     ");
             Console.WriteLine("       by Jamie Chopra       ");
             Console.WriteLine("=============================");
             Console.WriteLine();
