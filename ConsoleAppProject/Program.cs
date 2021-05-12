@@ -33,7 +33,7 @@ namespace ConsoleAppProject
             grades.TestGradesEnumeration();
 
             DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+            converter.ConvertMilesToFeet();
             converter.ConvertFeetToMiles();
             converter.ConvertMilesToMetres();
         }

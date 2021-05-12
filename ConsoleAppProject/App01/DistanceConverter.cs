@@ -25,55 +25,40 @@ namespace ConsoleAppProject.App01
         public const int MILES_IN_METRES = 1609;
 
         /**
-         *  Method that stores other methods and can be called within other classes
-         */
-        public void Run()
-        {
-            OutputHeading("Distance Converter");
-            InputMiles();
-            CalculateFeet();
-            OutputFeet();
-        }
-
-        /**
          * Method for converting feet into miles
          */
         public void ConvertFeetToMiles()
         {
             OutputHeading("Convert Feet to Miles");
+            feet = InputDistance("Please input the number of feet: "); ;
 
-            Console.Write("Please input the number of feet: ");
-            string value = Console.ReadLine();
-            feet = Convert.ToDouble(value);
             CalculateMiles();
-            OutputMiles();
+            OutputDistance(feet, nameof(feet), miles, nameof(miles));
         }
 
         /**
-         * Method for printing the amount of miles based on feet the user has input
+         * Converts user input miles to metres and displays the result.
          */
-        private void OutputMiles()
+        public void ConvertMilesToMetres()
         {
-            Console.WriteLine($"{feet} feet is  {miles} miles.");
-        }
+            OutputHeading("Convert Miles to Metres");
+            miles = InputDistance("Please input the number of Miles: ");
 
-        /**
-         * Calcuates the amount of miles based on the amount of feet the user has input
-         */
-        private void CalculateMiles()
-        {
-            miles = feet / FEET_IN_MILES;
+            CalculateMetres();
+            OutputDistance(miles, nameof(miles), metres, nameof(metres));
         }
 
         /*
          * Recieves user input for amount of miles the user wishes to convert.
          * Input must be given as a double number
          */
-        private void InputMiles() 
+        public void ConvertMilesToFeet() 
         {
-            Console.Write("Please input the number of miles: ");
-            string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
+            OutputHeading("Convert Miles to Feet");
+            miles = InputDistance("Please input the number of miles: ");
+
+            CalculateFeet();
+            OutputDistance(miles, nameof(miles), feet, nameof(feet));
         }
 
         /**
@@ -85,25 +70,11 @@ namespace ConsoleAppProject.App01
         }
 
         /**
-         * Outputs the calculation of miles to feet.
+         * Calcuates the amount of miles based on the amount of feet the user has input
          */
-        private void OutputFeet() 
+        private void CalculateMiles()
         {
-            Console.WriteLine(miles + " miles is " + feet + " feet.");
-        }
-
-        /**
-         * Converts user input miles to metres and displays the result.
-         */
-        public void ConvertMilesToMetres() 
-        {
-            OutputHeading("Convert Miles to Metres");
-
-            Console.Write("Please input the number of Miles: ");
-            string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
-            CalculateMetres();
-            OutputMetres();
+            miles = feet / FEET_IN_MILES;
         }
 
         /**
@@ -115,11 +86,21 @@ namespace ConsoleAppProject.App01
         }
 
         /**
-         * Prints string presenting the amount of metres in the amount of miles the user has input.
+         * Method for reading line input and storing the value to be converted.
          */
-        private void OutputMetres()
+        private double InputDistance(string prompt)
         {
-            Console.WriteLine(miles + " miles is " + metres + " metres.");
+            Console.Write(prompt);
+            string value = Console.ReadLine();
+            return Convert.ToDouble(value);
+        }
+
+        /**
+         * Method for printing the amount of distance in each unit when converted
+         */
+        private void OutputDistance(double fromDistance, string fromUnit, double toDistance, string toUnit) 
+        { 
+            Console.WriteLine($" {fromDistance}  {fromUnit} is {toDistance} {toUnit}" );
         }
 
         /**
@@ -134,5 +115,6 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("=============================");
             Console.WriteLine();
         }
+
     }
 }
