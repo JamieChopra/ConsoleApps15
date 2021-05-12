@@ -101,8 +101,12 @@ namespace ConsoleAppProject.App01
             {
                 return MILES;
             }
-
-            return null;
+            else 
+            {
+                Console.WriteLine("You have entered an invalid value.");
+                return null;
+            }
+            
         }
 
         /**
@@ -147,7 +151,7 @@ namespace ConsoleAppProject.App01
          */
         private void CalculateDistance() 
         {
-            if (fromUnit == MILES && toUnit == FEET) 
+            if (fromUnit == MILES && toUnit == FEET)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
             }
@@ -175,6 +179,10 @@ namespace ConsoleAppProject.App01
             else if (fromUnit == METRES && toUnit == MILES)
             {
                 toDistance = fromDistance / MILES_IN_METRES;
+            }
+            else 
+            {
+                Console.WriteLine("You have entered an invalid value.");
             }
         }
 
