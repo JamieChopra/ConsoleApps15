@@ -38,9 +38,9 @@ namespace ConsoleAppProject.App01
         //String to store variable of the unit you wish to convert to
         private string toUnit;
 
-        //String to store variable of the distance of the unit in which you enter
+        //Double to store variable of the distance of the unit in which you enter
         private double fromDistance;
-        //String to store variable of the distance of the unit you have converted to
+        //Double to store variable of the distance of the unit you have converted to
         private double toDistance;
 
         //Constructor to set starting values

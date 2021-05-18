@@ -29,13 +29,20 @@ namespace ConsoleAppProject.App02
 
         public const string METRES_AND_KILOGRAMS = "Metres and Kilograms";
 
+        //Choose between metric and imperial
         private string SystemChoice;
+
+        private double Conversion;
+
+        private double BMIResult;
 
         public void BMICalculator() 
         {
             OutputHeading();
 
             SystemChoice = selectSystem("\nPlease choose between the system conversions: ");
+
+            Conversion = InputValue("\nPlease input the value of " + );
         }
         
         private string selectSystem(string prompt) 
@@ -46,7 +53,7 @@ namespace ConsoleAppProject.App02
             return unit;
         }
 
-        public static string chooseSystem(string prompt) 
+        private static string chooseSystem(string prompt) 
         {
             Console.WriteLine($" 1. {FEET_AND_STONE}");
             Console.WriteLine($" 2. {METRES_AND_KILOGRAMS}\n");
@@ -69,14 +76,32 @@ namespace ConsoleAppProject.App02
             {
                 Console.WriteLine("\nYou have entered an invalid value.");
                 BMI restartBMI = new BMI();
-                restartBMI.chooseSystem();
+                restartBMI.BMICalculator();
                 return null;
             }
         }
 
+        private double InputValue(string prompt)
+        {
+            Console.Write(prompt);
+            string value = Console.ReadLine();
+            return Convert.ToDouble(value);
+        }
+
+        private static string AllocatingUnit() 
+        {
+        }
+
         private void calculateBMI() 
         {
-        
+            if (SystemChoice == FEET_AND_STONE) 
+            {
+                BMIResult = Pounds * 703 / (Inches * Inches);
+            }
+            else if (SystemChoice == METRES_AND_KILOGRAMS)
+            {
+
+            }
         }
 
             private void OutputHeading() 
