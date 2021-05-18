@@ -58,6 +58,10 @@ namespace ConsoleAppProject.App02
             calculateBMI();
 
             Console.WriteLine("\nYour current BMI is " + BMIResult);
+
+            WHOStatus();
+
+            AtRisk();
         }
         
         private string selectSystem(string prompt) 
@@ -147,14 +151,38 @@ namespace ConsoleAppProject.App02
             }
         }
 
-            private void OutputHeading() 
+        private void AtRisk() 
         {
-            Console.WriteLine("");
-            Console.WriteLine("=============================");
+            if (BMIResult >= 35) 
+            {
+                Console.WriteLine("\nYour current BMI is putting your health at a major risk.\n");
+            }
+            if (BMIResult > 24 && BMIResult < 36) 
+            {
+                Console.WriteLine("\nYour current BMI may be at a significant risk to your health");
+                Console.WriteLine("If you are a child, pregnant woman, a muscle builder or BAME.\n");
+            }
+        }
+
+        private void WHOStatus() 
+        {
+            Console.WriteLine("\n=================================");
+            Console.WriteLine("WHO WEIGHT STATUS===BMI kg/m2");
+            Console.WriteLine("    Underweight || < 18.50");
+            Console.WriteLine("         Normal || 18.5 - 24.9");
+            Console.WriteLine("     Overweight || 25.0 - 29.9");
+            Console.WriteLine("  Obese Class 1 || 30.0 - 34.9");
+            Console.WriteLine("  Obese Class 2 || 35.0 - 39.9");
+            Console.WriteLine("  Obese Class 3 || >= 40.0");
+            Console.WriteLine("=================================\n");
+        }   
+
+        private void OutputHeading() 
+        {
+            Console.WriteLine("\n=============================");
             Console.WriteLine("         BMI Calculator      ");
             Console.WriteLine("         by Jamie Chopra     ");
-            Console.WriteLine("=============================");
-            Console.WriteLine("");
+            Console.WriteLine("=============================\n");
         }
     }
 
