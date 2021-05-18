@@ -13,15 +13,15 @@ namespace ConsoleAppProject.App02
 
         public const int FEET_TO_INCHES = 12;
 
-        private int Stone;
+        private double Stone;
 
-        private int Pounds;
+        private double Pounds;
 
-        private int Feet;
+        private double Feet;
 
-        private int Inches;
+        private double Inches;
 
-        private int Centimetres;
+        private double Centimetres;
 
         private double Kilograms;
 
@@ -32,7 +32,14 @@ namespace ConsoleAppProject.App02
         //Choose between metric and imperial
         private string SystemChoice;
 
-        private double Conversion;
+        //Stores double value to then be used in calculation
+        private double firstValue;
+        //Stores second double value to then be used in calculation
+        private double secondValue;
+        //Stores third double value to then be used in calculation
+        private double thirdValue;
+        //Stores fourth double value to then be used in calculation
+        private double fourthValue;
 
         private double BMIResult;
 
@@ -42,7 +49,7 @@ namespace ConsoleAppProject.App02
 
             SystemChoice = selectSystem("\nPlease choose between the system conversions: ");
 
-            Conversion = InputValue("\nPlease input the value of " + );
+            storeValue();
         }
         
         private string selectSystem(string prompt) 
@@ -88,8 +95,26 @@ namespace ConsoleAppProject.App02
             return Convert.ToDouble(value);
         }
 
-        private static string AllocatingUnit() 
+        private void storeValue() 
         {
+            if (SystemChoice == FEET_AND_STONE)
+            {
+                firstValue = InputValue("\nPlease input the number of Feet: ");
+                secondValue = InputValue("\nPlease input the number of Inches: ");
+                thirdValue = InputValue("\nPlease input the number of Stone: ");
+                fourthValue = InputValue("\nPlease input the number of Pounds: ");
+                Feet = firstValue;
+                Inches = secondValue;
+                Stone = thirdValue;
+                Pounds = fourthValue;
+            }
+            else if (SystemChoice == METRES_AND_KILOGRAMS)
+            {
+                firstValue = InputValue("\nPlease input the number of Centimetres: ");
+                secondValue = InputValue("\nPlease input the number of Kilograms: ");
+                Centimetres = firstValue;
+                Kilograms = secondValue;
+            }
         }
 
         private void calculateBMI() 
