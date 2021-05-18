@@ -21,6 +21,8 @@ namespace ConsoleAppProject.App02
 
         private double Inches;
 
+        private double Metres;
+
         private double Centimetres;
 
         private double Kilograms;
@@ -51,17 +53,11 @@ namespace ConsoleAppProject.App02
 
             storeValue();
 
-            Console.WriteLine(Pounds);
-
-            Console.WriteLine(Stone);
-
-            ConvertingToPoundsandInches();
-
-            Console.WriteLine(Pounds);
-
-            Console.WriteLine(Stone);
+            ConvertingValuesForCalculation();
 
             calculateBMI();
+
+            Console.WriteLine("\nYour current BMI is " + BMIResult);
         }
         
         private string selectSystem(string prompt) 
@@ -129,12 +125,14 @@ namespace ConsoleAppProject.App02
             }
         }
 
-        private void ConvertingToPoundsandInches() 
+        private void ConvertingValuesForCalculation() 
         {
             Pounds = Pounds + (Stone * STONE_TO_POUNDS);
             Inches = Inches + (Feet * FEET_TO_INCHES);
+            Metres = Centimetres / 100;
             Stone = 0;
             Feet = 0;
+            Centimetres = 0;
         }
 
         private void calculateBMI() 
@@ -145,7 +143,7 @@ namespace ConsoleAppProject.App02
             }
             else if (SystemChoice == METRES_AND_KILOGRAMS)
             {
-
+                BMIResult = Kilograms / (Metres * Metres);
             }
         }
 
