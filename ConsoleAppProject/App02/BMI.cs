@@ -46,7 +46,7 @@ namespace ConsoleAppProject.App02
             return unit;
         }
 
-        private static string chooseSystem(string prompt) 
+        public static string chooseSystem(string prompt) 
         {
             Console.WriteLine($" 1. {FEET_AND_STONE}");
             Console.WriteLine($" 2. {METRES_AND_KILOGRAMS}\n");
@@ -67,9 +67,16 @@ namespace ConsoleAppProject.App02
             }
             else
             {
-                Console.WriteLine("You have entered an invalid value.");
+                Console.WriteLine("\nYou have entered an invalid value.");
+                BMI restartBMI = new BMI();
+                restartBMI.chooseSystem();
                 return null;
             }
+        }
+
+        private void calculateBMI() 
+        {
+        
         }
 
             private void OutputHeading() 
