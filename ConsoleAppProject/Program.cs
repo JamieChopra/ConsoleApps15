@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -31,6 +32,9 @@ namespace ConsoleAppProject
             // Using an extension method for any enumeration
             StudentGrades grades = new StudentGrades();
             grades.TestGradesEnumeration();
+
+            BMI bmi = new BMI();
+            bmi.BMICalculator();
 
             DistanceConverter converter = new DistanceConverter();
             converter.ConvertingDistance();
