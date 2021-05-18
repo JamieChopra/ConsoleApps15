@@ -50,6 +50,18 @@ namespace ConsoleAppProject.App02
             SystemChoice = selectSystem("\nPlease choose between the system conversions: ");
 
             storeValue();
+
+            Console.WriteLine(Pounds);
+
+            Console.WriteLine(Stone);
+
+            ConvertingToPoundsandInches();
+
+            Console.WriteLine(Pounds);
+
+            Console.WriteLine(Stone);
+
+            calculateBMI();
         }
         
         private string selectSystem(string prompt) 
@@ -115,6 +127,14 @@ namespace ConsoleAppProject.App02
                 Centimetres = firstValue;
                 Kilograms = secondValue;
             }
+        }
+
+        private void ConvertingToPoundsandInches() 
+        {
+            Pounds = Pounds + (Stone * STONE_TO_POUNDS);
+            Inches = Inches + (Feet * FEET_TO_INCHES);
+            Stone = 0;
+            Feet = 0;
         }
 
         private void calculateBMI() 
