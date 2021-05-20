@@ -1,8 +1,73 @@
-﻿
+﻿@model ConsoleAppProject.App01.DistanceConverter
+@using ConsoleAppProject.App01
 @{
     ViewData["Title"] = "JC DistanceConverter";
 }
-<header>
+<header class="text-center jumbotron justify-content-center">
+
     <h1>DistanceConverter</h1>
+
+    <h2>by Jamie Chopra</h2>
+
+    <p>
+        This application will convert the distance you enter to the 
+        equivelent distance in other measurement units.
+    </p>
+
 </header>
+
+<form method="post">
+    <h3>Convert From:</h3>
+
+    <p>
+        <label>From Unit:</label>
+        <select asp-for="@Model.FromUnit">
+            <option>@DistanceConverter.MILES</option>
+            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.FEET</option>
+        </select>
+    </p>
+
+    <p>
+        @if (Model.FromDistance == 0)
+        {
+            <input type="text" asp-for="@Model.FromDistance" value="" 
+                   placeholder="From Distance" required/>
+        }
+        else
+        {
+            <input type="text" asp-for="@Model.FromDistance" 
+                   placeholder="From Distance" required />
+        }
+
+
+    </p>
+
+    <h3>Convert To:</h3>
+
+    <p>
+        <label>To Unit:</label>
+        <select asp-for="@Model.ToUnit">
+            <option>@DistanceConverter.MILES</option>
+            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.FEET</option>
+        </select>
+    </p>
+    <p>
+        @if (Model.ToDistance == 0)
+        {
+            <input type="text" asp-for="@Model.ToDistance" placeholder="To Distance" readonly />
+        }
+        else 
+        {
+            <input type="text" asp-for="@Model.ToDistance" value="@Model.ToDistance.ToString("0.00")" 
+                   placeholder="To Distance" readonly />
+        }
+    </p>
+
+    <p>
+        <button class="btn btn-success" type="submit">Calculate</button>
+    </p>
+
+</form>
 

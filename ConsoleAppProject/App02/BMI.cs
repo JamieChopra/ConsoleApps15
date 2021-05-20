@@ -60,8 +60,11 @@ namespace ConsoleAppProject.App02
 
             calculateBMI();
 
-            Console.WriteLine(GetHealthMessage());
-            Console.WriteLine(AtRisk());
+            Console.WriteLine("\nYour current BMI is " + BMIResult);
+
+            GetHealthMessage();
+
+            BAMEMessage();
 
             WHOStatus();
         }
@@ -157,19 +160,14 @@ namespace ConsoleAppProject.App02
             }
         }
 
-        public string AtRisk() 
+        public string BAMEMessage() 
         {
             StringBuilder message = new StringBuilder("\n");
 
-            if (BMIResult >= 35) 
-            {
-                Console.WriteLine("\nYour current BMI is putting your health at a major risk.\n");
-            }
-            if (BMIResult > 24 && BMIResult < 36) 
-            {
-                Console.WriteLine("\nYour current BMI may be at a significant risk to your health");
-                Console.WriteLine("If you are a child, pregnant woman, a muscle builder or BAME.\n");
-            }
+            message.Append($"If you are Black, Asian or any and other " +
+                $"minority ethnic groups, or pregnant with a BMI over 25 " +
+                $"then your BMI is putting you at a high health risk.");
+          
             return message.ToString();
         }
 
