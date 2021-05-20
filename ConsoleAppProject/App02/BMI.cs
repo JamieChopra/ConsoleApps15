@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 namespace ConsoleAppProject.App02
 {
     /// <summary>
@@ -13,37 +14,39 @@ namespace ConsoleAppProject.App02
 
         public const int FEET_TO_INCHES = 12;
 
-        private double Stone;
+        public double Stone { get; set; }
 
-        private double Pounds;
+        public double Pounds { get; set; }
 
-        private double Feet;
+        public double Feet { get; set; }
 
-        private double Inches;
+        public double Inches { get; set; }
 
-        private double Metres;
+        public double Metres { get; set; }
 
-        private double Centimetres;
+        public double Centimetres { get; set; }
 
-        private double Kilograms;
+        public double Kilograms { get; set; }
 
         public const string FEET_AND_STONE = "Feet and Stone";
 
         public const string METRES_AND_KILOGRAMS = "Metres and Kilograms";
 
         //Choose between metric and imperial
-        private string SystemChoice;
+        public string SystemChoice;
 
-        //Stores double value to then be used in calculation
-        private double firstValue;
-        //Stores second double value to then be used in calculation
-        private double secondValue;
-        //Stores third double value to then be used in calculation
-        private double thirdValue;
-        //Stores fourth double value to then be used in calculation
-        private double fourthValue;
+        public double BMIResult { get; set; }
 
-        private double BMIResult;
+        public BMI() 
+        {
+            this.Stone = 0;
+            this.Pounds = 0;
+            this.Feet = 0;
+            this.Inches = 0;
+            this.Metres = 0;
+            this.Centimetres = 0;
+            this.Kilograms = 0;
+        }
 
         public void BMICalculator() 
         {
@@ -57,11 +60,10 @@ namespace ConsoleAppProject.App02
 
             calculateBMI();
 
-            Console.WriteLine("\nYour current BMI is " + BMIResult);
+            Console.WriteLine(GetHealthMessage());
+            Console.WriteLine(AtRisk());
 
             WHOStatus();
-
-            AtRisk();
         }
         
         private string selectSystem(string prompt) 
@@ -111,32 +113,36 @@ namespace ConsoleAppProject.App02
         {
             if (SystemChoice == FEET_AND_STONE)
             {
-                firstValue = InputValue("\nPlease input the number of Feet: ");
-                secondValue = InputValue("\nPlease input the number of Inches: ");
-                thirdValue = InputValue("\nPlease input the number of Stone: ");
-                fourthValue = InputValue("\nPlease input the number of Pounds: ");
-                Feet = firstValue;
-                Inches = secondValue;
-                Stone = thirdValue;
-                Pounds = fourthValue;
+                Feet = InputValue("\nPlease input the number of Feet: ");
+                Inches = InputValue("\nPlease input the number of Inches: ");
+                Stone = InputValue("\nPlease input the number of Stone: ");
+                Pounds = InputValue("\nPlease input the number of Pounds: ");
             }
             else if (SystemChoice == METRES_AND_KILOGRAMS)
             {
-                firstValue = InputValue("\nPlease input the number of Centimetres: ");
-                secondValue = InputValue("\nPlease input the number of Kilograms: ");
-                Centimetres = firstValue;
-                Kilograms = secondValue;
+                Centimetres = InputValue("\nPlease input the number of Centimetres: ");
+                Kilograms = InputValue("\nPlease input the number of Kilograms: ");
             }
         }
 
-        private void ConvertingValuesForCalculation() 
+        public void ConvertingValuesForCalculation() 
         {
             Pounds = Pounds + (Stone * STONE_TO_POUNDS);
             Inches = Inches + (Feet * FEET_TO_INCHES);
             Metres = Centimetres / 100;
-            Stone = 0;
-            Feet = 0;
-            Centimetres = 0;
+        }
+
+        public void CalculateMetricBMI()
+        {
+            ConvertingValuesForCalculation();
+            BMIResult= Kilograms / (Metres * Metres);
+        }
+
+
+        public void CalculateImperialBMI() 
+        {
+            ConvertingValuesForCalculation();
+            BMIResult = Pounds * 703 / (Inches * Inches);
         }
 
         private void calculateBMI() 
@@ -151,8 +157,10 @@ namespace ConsoleAppProject.App02
             }
         }
 
-        private void AtRisk() 
+        public string AtRisk() 
         {
+            StringBuilder message = new StringBuilder("\n");
+
             if (BMIResult >= 35) 
             {
                 Console.WriteLine("\nYour current BMI is putting your health at a major risk.\n");
@@ -162,9 +170,10 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine("\nYour current BMI may be at a significant risk to your health");
                 Console.WriteLine("If you are a child, pregnant woman, a muscle builder or BAME.\n");
             }
+            return message.ToString();
         }
 
-        private void WHOStatus() 
+        public void WHOStatus() 
         {
             Console.WriteLine("\n=================================");
             Console.WriteLine("WHO WEIGHT STATUS===BMI kg/m2");
@@ -176,6 +185,38 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("  Obese Class 3 || >= 40.0");
             Console.WriteLine("=================================\n");
         }   
+
+        public string GetHealthMessage()
+        {
+            StringBuilder message = new StringBuilder("\n");
+
+            if (BMIResult < 18.50)
+                {
+                message.Append($"Your BMI is {BMIResult}, You are underweight.");
+                }
+            else if (BMIResult >= 18.5 && BMIResult < 25)
+            {
+                message.Append($"Your BMI is {BMIResult}, You are a normal weight.");
+            }
+            else if (BMIResult >= 20 && BMIResult < 30)
+            {
+                message.Append($"Your BMI is {BMIResult}, You are overweight.");
+            }
+            else if (BMIResult >= 30 && BMIResult < 35)
+            {
+                message.Append($"Your BMI is {BMIResult}, You are in obese class 1.");
+            }
+            else if (BMIResult >= 35 && BMIResult < 40)
+            {
+                message.Append($"Your BMI is {BMIResult}, You are in obese class 2.");
+            }
+            else if (BMIResult >= 40)
+            {
+                message.Append($"Your BMI is {BMIResult}, You are in obese class 3.");
+            }
+            return message.ToString();
+        }
+
 
         private void OutputHeading() 
         {

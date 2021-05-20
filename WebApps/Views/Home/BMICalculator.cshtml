@@ -1,10 +1,14 @@
-﻿
+﻿@model ConsoleAppProject.App02.BMI
 @{
-    ViewData["Title"] = "BMICalculator";
+    ViewData["Title"] = "BMI Calculator";
 }
-<header>
+<header class="text-center jumbotron justify-content-center">
 <h1>BMICalculator</h1>
 <h2>by Jamie Chopra</h2>
+    <p>
+        This application allows you to enter both your weight in height through 
+        imperial or metric units and calculates your current BMI.
+    </p>
 </header>
 <section>
     <form method="post">
@@ -13,11 +17,11 @@
             Please enter your height using metric or imperial units.
         </p>
         <p>
-            <input type="number" placeholder="Feet" value="" />
-            <input type="number" placeholder="Inches" value="">
+            <input type="number" placeholder="Feet" asp-for="@Model.Feet" value="5"/>
+            <input type="number" placeholder="Inches" asp-for="@Model.Inches" value="2"/>
         </p>
         <p>
-            <input type="number" placeholder="Centimetres" value="">
+            <input type="number" placeholder="Centimetres" asp-for="@Model.Centimetres" value="0"/>
         </p>
 
         <h3>Weight</h3>
@@ -25,15 +29,15 @@
             Please enter your weight using metric or imperial units.
         </p>
         <p>
-            <input type="number" placeholder="Stone" value="" />
-            <input type="number" placeholder="Pounds" value="" />
+            <input type="number" placeholder="Stone" asp-for="@Model.Stone" value="2"/>
+            <input type="number" placeholder="Pounds" asp-for="@Model.Pounds" value="4"/>
         </p>
         <p>
-            <input type="number" placeholder="Kilograms" value="">
+            <input type="number" placeholder="Kilograms" asp-for="@Model.Kilograms" value="0"/>
         </p>
 
         <p>
             <button class="btn btn-success" type="submit">Calculate</button>
         </p>
-
+    </form>
 </section>
