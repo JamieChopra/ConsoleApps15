@@ -11,6 +11,53 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        public string[] Students { get; set; }
+        public int[] Marks { get; set; }
+        public int[] GradeProfile { get; set; }
+        public double Mean { get; set; }
+        public int Minimum { get; set; }
+        public int Maximum { get; set; }
+
+        public StudentGrades() 
+        {
+            Students = new string[]
+            {
+                "Mark", "Steve", "Luke", "Jessica",
+                "Jake", "Samantha", "George", "Clare",
+                "Harry", "Abdul"
+            };
+            GradeProfile = new int[(int)Grades.A + 1];
+            Marks = new int[Students.Length];
+        }
+        /**
+         * Method for inputting a mark in which is then stored in the array
+         */
+        public void InputMarks() 
+        {
+            throw new NotImplementedException();
+        }
+        /**
+         * Method for outputting the marks along with the students names
+         */
+        public void OutputMarks()
+        {
+            throw new NotImplementedException();
+        }
+        /**
+         * Converts students marks to grades
+         */
+        public Grades ConvertToGrade(int mark)
+        {
+            throw new NotImplementedException();
+        }
+        /**
+         * Calculates the mean grade for the students
+         */
+        public void CalculateStats()
+        {
+            throw new NotImplementedException();
+        }
+
         public void TestGradesEnumeration()
         {
             Grades grade = Grades.C;
