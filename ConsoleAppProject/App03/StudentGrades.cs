@@ -60,14 +60,37 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.F;
             }
-            else return Grades.D;
+            else if (mark >= LowestGradeD && mark < LowestGradeC)
+            {
+                return Grades.D;
+            }
+            else if (mark >= LowestGradeC && mark < LowestGradeB)
+            {
+                return Grades.C;
+            }
+            else if (mark >= LowestGradeB && mark < LowestGradeA)
+            {
+                return Grades.B;
+            }
+            else if (mark >= LowestGradeA && mark < HighestMark)
+            {
+                return Grades.A;
+            }
+            else return Grades.X;
         }
         /**
          * Calculates the mean grade for the students
          */
         public void CalculateStats()
         {
-            throw new NotImplementedException();
+            double total = 0;
+
+            foreach(int mark in Marks)
+            {
+                total = total + mark;
+            }
+
+            Mean = total / Marks.Length;
         }
 
         public void TestGradesEnumeration()
