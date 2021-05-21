@@ -19,25 +19,50 @@ namespace ConsoleAppProject
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            
-            Console.WriteLine("BNU CO453 Applications Programming 2020-2021!");
-            Console.WriteLine();
 
+            ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!\n");
+
+            string[] choices = { "Distance Converter", "BMI Calculator", "Student Grades" };
+
+            ConsoleHelper.SelectChoice(choices);
+
+            Console.Write("Please enter your choice of Applications >");
+            string choice = Console.ReadLine();
+
+
+            DistanceConverter converter = new DistanceConverter();
+
+            BMI bmi = new BMI();
+
+            // Using an extension method for any enumeration
+            StudentGrades grades = new StudentGrades();
+            
+
+            if (choice.Equals("1"))
+            {
+                converter.ConvertingDistance();
+            }
+
+            else if (choice.Equals("2"))
+            {
+                bmi.BMICalculator();
+            }
+
+            else if (choice.Equals("3"))
+            {
+                grades.TestGradesEnumeration();
+            }
+
+            /**
             // Using an extension method for each enumeration
             Console.WriteLine("Using MyEnum Extension Method!\n");
             Console.WriteLine("MyEnum Value = " + MyEnum.FirstValue);
             Console.WriteLine("MyEnum Friendly Value = " + MyEnum.FirstValue.EnumValue());
             Console.WriteLine();
+            */
 
-            // Using an extension method for any enumeration
-            StudentGrades grades = new StudentGrades();
-            grades.TestGradesEnumeration();
+           
 
-            BMI bmi = new BMI();
-            bmi.BMICalculator();
-
-            DistanceConverter converter = new DistanceConverter();
-            converter.ConvertingDistance();
         }
     }
 }

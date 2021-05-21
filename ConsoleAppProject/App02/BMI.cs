@@ -50,7 +50,7 @@ namespace ConsoleAppProject.App02
 
         public void BMICalculator() 
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("BMI Calculator");
 
             SystemChoice = selectSystem("\nPlease choose between the system conversions: ");
 
@@ -215,14 +215,6 @@ namespace ConsoleAppProject.App02
             return message.ToString();
         }
 
-
-        private void OutputHeading() 
-        {
-            Console.WriteLine("\n=============================");
-            Console.WriteLine("         BMI Calculator      ");
-            Console.WriteLine("         by Jamie Chopra     ");
-            Console.WriteLine("=============================\n");
-        }
     }
 
 

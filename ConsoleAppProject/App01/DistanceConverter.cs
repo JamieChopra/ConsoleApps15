@@ -49,7 +49,7 @@ namespace ConsoleAppProject.App01
          */
         public void ConvertingDistance() 
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Distance Converter");
 
             FromUnit = SelectUnit("\nPlease enter the unit you wish to convert: ");
             ToUnit = SelectUnit("\nPlease enter the unit you wish to convert: ");
@@ -178,18 +178,7 @@ namespace ConsoleAppProject.App01
             }
         }
 
-        /**
-         * Method for printing a heading
-         */
-        private void OutputHeading() 
-        {
-            Console.WriteLine();
-            Console.WriteLine("=============================");
-            Console.WriteLine("      Distance Converter     ");
-            Console.WriteLine("       by Jamie Chopra       ");
-            Console.WriteLine("=============================");
-            Console.WriteLine();
-        }
+       
 
     }
 }
