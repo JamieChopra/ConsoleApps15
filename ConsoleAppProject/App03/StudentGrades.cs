@@ -83,10 +83,15 @@ namespace ConsoleAppProject.App03
          */
         public void CalculateStats()
         {
+            Maximum = Marks[0];
+            Minimum = Marks[0];
+
             double total = 0;
 
             foreach(int mark in Marks)
             {
+                if (mark > Maximum) Maximum = mark;
+                if (mark < Minimum) Minimum = mark;
                 total = total + mark;
             }
 
