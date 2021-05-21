@@ -78,11 +78,12 @@ namespace ConsoleApp.Tests
         public void TestGradeProfile()
         {
             converter.Marks = testMarks;
-            bool expectedProfile = false;
 
             converter.CalculateGradeProfile();
 
-            expectedProfile= ((converter.GradeProfile[0] == 3) &&
+            bool expectedProfile;
+
+            expectedProfile = ((converter.GradeProfile[0] == 3) &&
                              (converter.GradeProfile[1] == 1) &&
                              (converter.GradeProfile[2] == 1) &&
                              (converter.GradeProfile[3] == 1) &&
@@ -90,5 +91,6 @@ namespace ConsoleApp.Tests
 
             Assert.IsTrue(expectedProfile);
         }
+
     }
 }

@@ -18,41 +18,51 @@ namespace ConsoleAppProject
     {
         public static void Main(string[] args)
         {
-            //Creating an object of the distance converter
-            DistanceConverter converter = new DistanceConverter();
-            //Creating an object of the BMI calculator
-            BMI bmi = new BMI();
-
-            //Creating an object of the student grades
-            StudentGrades grades = new StudentGrades();
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
-            ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!\n");
-
-            string[] choices = { "Distance Converter", "BMI Calculator", "Student Grades" };
-
-            int choiceNo = ConsoleHelper.SelectChoice(choices);
-
-        
-            if (choiceNo == 1)
+            while (true)
             {
-                converter.ConvertingDistance();
-            }
+                //Creating an object of the distance converter
+                DistanceConverter converter = new DistanceConverter();
+                //Creating an object of the BMI calculator
+                BMI bmi = new BMI();
 
-            else if (choiceNo == 2)
-            {
-                bmi.BMICalculator();
-            }
+                //Creating an object of the student grades
+                StudentGrades grades = new StudentGrades();
 
-            else if (choiceNo == 3)
-            {
-                grades.TestGradesEnumeration();
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+                ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!\n");
+
+                string[] choices = { "Distance Converter", "BMI Calculator", "Student Grades", "Quit" };
+
+                int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+
+                if (choiceNo == 1)
+                {
+                    converter.ConvertingDistance();
+                }
+
+                else if (choiceNo == 2)
+                {
+                    bmi.BMICalculator();
+                }
+
+                else if (choiceNo == 3)
+                {
+                    grades.ChooseMethod();
+                }
+                else if(choiceNo == 4) 
+                {
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine("\nYou have entered an invalid choice");
+                }
             }
-            else 
-            {
-                Console.WriteLine("\nYou have entered an invalid choice");
-            }
+            
             /**
             // Using an extension method for each enumeration
             Console.WriteLine("Using MyEnum Extension Method!\n");

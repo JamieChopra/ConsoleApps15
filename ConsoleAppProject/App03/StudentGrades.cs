@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ConsoleAppProject.Helpers;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using ConsoleAppProject.Helpers;
 
 namespace ConsoleAppProject.App03
 {
@@ -36,20 +36,35 @@ namespace ConsoleAppProject.App03
             };
             GradeProfile = new int[(int)Grades.A + 1];
             Marks = new int[Students.Length];
+
+            
         }
         /**
          * Method for inputting a mark in which is then stored in the array
          */
-        public void InputMarks() 
+        public int[] InputMarks()  
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Students.Length; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine(Students[i] + ":");
+                string results = Console.ReadLine();
+                Marks[i] = Convert.ToInt32(results);
+            }
+
+            return Marks;
+           
         }
         /**
          * Method for outputting the marks along with the students names
          */
         public void OutputMarks()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Students.Length; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine(Students[i] + ": " + Marks[i]);
+            }
         }
         /**
          * Converts students marks to grades
@@ -72,7 +87,7 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.B;
             }
-            else if (mark >= LowestGradeA && mark < HighestMark)
+            else if (mark >= LowestGradeA && mark <= HighestMark)
             {
                 return Grades.A;
             }
@@ -98,6 +113,38 @@ namespace ConsoleAppProject.App03
             Mean = total / Marks.Length;
         }
 
+        /**
+         * Goes through list of students marks converts it to a grade
+         * Grade is added to a students profile
+         * Amount of students with grade is calculated
+         */
+        public void CalculateGradeProfile() 
+        {
+            for (int i = 0; i > GradeProfile.Length; i++) 
+            {
+                GradeProfile[i] = 0;
+            }
+            foreach(int mark in Marks) 
+            {
+                Grades grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+            }
+        }
+
+        private void OutputGradeProfile() 
+        {
+            Grades grade = Grades.X;
+
+            Console.WriteLine();
+
+            foreach(int count in GradeProfile) 
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grade {grade} {percentage}% Count {count}\n");
+                grade++;
+            }
+        }
+
         public void TestGradesEnumeration()
         {
             Grades grade = Grades.C;
@@ -120,6 +167,47 @@ namespace ConsoleAppProject.App03
             Console.WriteLine($"Name = {testName}");
             Console.WriteLine($"Description = {testDescription}");
 
+        }
+
+        public void ChooseMethod() 
+        {
+
+            while (true)
+            {
+
+                ConsoleHelper.OutputHeading("   Student Grades\n");
+
+                string[] choices = { "Input Marks", "Output Marks", "Output Stats", "Output Grade Profile", "Quit" };
+
+                int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+                if (choiceNo == 1)
+                {
+                    InputMarks();
+                }
+
+                else if (choiceNo == 2)
+                {
+                    OutputMarks();
+                }
+
+                else if (choiceNo == 3)
+                {
+
+                }
+                else if (choiceNo == 4)
+                {
+                    OutputGradeProfile();
+                }
+                else if (choiceNo == 5)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou have entered an invalid choice");
+                }
+            }
         }
     }
 }
