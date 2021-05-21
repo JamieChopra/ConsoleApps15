@@ -18,41 +18,41 @@ namespace ConsoleAppProject
     {
         public static void Main(string[] args)
         {
+            //Creating an object of the distance converter
+            DistanceConverter converter = new DistanceConverter();
+            //Creating an object of the BMI calculator
+            BMI bmi = new BMI();
+
+            //Creating an object of the student grades
+            StudentGrades grades = new StudentGrades();
+
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!\n");
 
             string[] choices = { "Distance Converter", "BMI Calculator", "Student Grades" };
 
-            ConsoleHelper.SelectChoice(choices);
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
 
-            Console.Write("Please enter your choice of Applications >");
-            string choice = Console.ReadLine();
-
-
-            DistanceConverter converter = new DistanceConverter();
-
-            BMI bmi = new BMI();
-
-            // Using an extension method for any enumeration
-            StudentGrades grades = new StudentGrades();
-            
-
-            if (choice.Equals("1"))
+        
+            if (choiceNo == 1)
             {
                 converter.ConvertingDistance();
             }
 
-            else if (choice.Equals("2"))
+            else if (choiceNo == 2)
             {
                 bmi.BMICalculator();
             }
 
-            else if (choice.Equals("3"))
+            else if (choiceNo == 3)
             {
                 grades.TestGradesEnumeration();
             }
-
+            else 
+            {
+                Console.WriteLine("\nYou have entered an invalid choice");
+            }
             /**
             // Using an extension method for each enumeration
             Console.WriteLine("Using MyEnum Extension Method!\n");
