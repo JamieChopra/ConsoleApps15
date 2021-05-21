@@ -11,6 +11,14 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        public const int LowestMark = 0;
+        public const int LowestGradeD = 40;
+        public const int LowestGradeC = 50;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeA = 70;
+        public const int HighestMark = 100;
+
+
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
         public int[] GradeProfile { get; set; }
@@ -48,7 +56,11 @@ namespace ConsoleAppProject.App03
          */
         public Grades ConvertToGrade(int mark)
         {
-            throw new NotImplementedException();
+            if (mark >= LowestMark && mark < LowestGradeD)
+            {
+                return Grades.F;
+            }
+            else return Grades.D;
         }
         /**
          * Calculates the mean grade for the students
