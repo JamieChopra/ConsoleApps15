@@ -26,7 +26,7 @@ namespace ConsoleAppProject.App03
         public int Minimum { get; set; }
         public int Maximum { get; set; }
 
-        public StudentGrades() 
+        public StudentGrades()
         {
             Students = new string[]
             {
@@ -37,12 +37,12 @@ namespace ConsoleAppProject.App03
             GradeProfile = new int[(int)Grades.A + 1];
             Marks = new int[Students.Length];
 
-            
+
         }
         /**
          * Method for inputting a mark in which is then stored in the array
          */
-        public int[] InputMarks()  
+        public int[] InputMarks()
         {
             for (int i = 0; i < Students.Length; i++)
             {
@@ -53,7 +53,7 @@ namespace ConsoleAppProject.App03
             }
 
             return Marks;
-           
+
         }
         /**
          * Method for outputting the marks along with the students names
@@ -103,7 +103,7 @@ namespace ConsoleAppProject.App03
 
             double total = 0;
 
-            foreach(int mark in Marks)
+            foreach (int mark in Marks)
             {
                 if (mark > Maximum) Maximum = mark;
                 if (mark < Minimum) Minimum = mark;
@@ -118,31 +118,39 @@ namespace ConsoleAppProject.App03
          * Grade is added to a students profile
          * Amount of students with grade is calculated
          */
-        public void CalculateGradeProfile() 
+        public void CalculateGradeProfile()
         {
-            for (int i = 0; i > GradeProfile.Length; i++) 
+            for (int i = 0; i > GradeProfile.Length; i++)
             {
                 GradeProfile[i] = 0;
             }
-            foreach(int mark in Marks) 
+            foreach (int mark in Marks)
             {
                 Grades grade = ConvertToGrade(mark);
                 GradeProfile[(int)grade]++;
             }
         }
 
-        private void OutputGradeProfile() 
+        private void OutputGradeProfile()
         {
             Grades grade = Grades.X;
-
+            
             Console.WriteLine();
 
-            foreach(int count in GradeProfile) 
+            foreach (int count in GradeProfile)
             {
                 int percentage = count * 100 / Marks.Length;
                 Console.WriteLine($"Grade {grade} {percentage}% Count {count}\n");
                 grade++;
             }
+        }
+
+        public void OutputStats()
+        {
+            CalculateStats();
+            Console.WriteLine("\nThe Minimum mark inputted was: " + Minimum);
+            Console.WriteLine("\nThe Maximum mark inputted was: " + Maximum);
+            Console.WriteLine("\nThe Mean mark is: " + Mean);
         }
 
         public void TestGradesEnumeration()
@@ -193,7 +201,7 @@ namespace ConsoleAppProject.App03
 
                 else if (choiceNo == 3)
                 {
-
+                    OutputStats();
                 }
                 else if (choiceNo == 4)
                 {

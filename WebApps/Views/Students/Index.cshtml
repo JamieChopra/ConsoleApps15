@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApps.Models.Student>
+
+@{
+    ViewData["Title"] = "JC Student Marks";
+}
+<header class="text-center jumbotron justify-content-center">
+
+    <h1>Student Marks</h1>
+
+    <h2>by Jamie Chopra</h2>
+
+    <p>
+        This application will allow you to input students
+        and their marks and edit them.
+    </p>
+
+
+    <p>
+        <a class="btn btn-success" asp-action="Create">Add New Student</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mark)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mark)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
