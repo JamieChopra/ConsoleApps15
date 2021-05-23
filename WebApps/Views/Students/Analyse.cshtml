@@ -1,0 +1,63 @@
+﻿@model ConsoleAppProject.App03.StudentGrades
+@{
+    ViewData["Title"] = "Analyse";
+}
+
+<header class="text-center jumbotron justify-content-center">
+
+    <h1>Analyse Grades</h1>
+
+    <h2>by Jamie Chopra</h2>
+
+    <p>
+        Displays statistics, showing the mean
+        minimum and maximum marks between the students
+        that have been input.
+    </p>
+</header>
+
+<section>
+    <h3>Statistics</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center table-success">
+                <th>No Students</th>
+                <th>Min Mark</th>
+                <th>Max Mark</th>
+                <th>Mean Mark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center">
+                <td>@Model.Students.Length</td>
+                <td>@Model.Minimum</td>
+                <td>@Model.Maximum</td>
+                <td>@Model.Mean</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h3>Grade Profile</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center table-info">
+                <th>Grade F</th>
+                <th>Grade D</th>
+                <th>Grade C</th>
+                <th>Grade B</th>
+                <th>Grade A</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center">
+                @foreach (int count in Model.GradeProfile) 
+                {
+                    double percent = (double)count / Model.Marks.Length;
+                    <td>@percent.ToString("0.0%")</td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</section>
