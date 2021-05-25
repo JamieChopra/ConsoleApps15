@@ -44,7 +44,27 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.PostId"></a>
+    @if (Model.Comments == null || Model.Comments.Count() == 0)
+    {
+        <p>
+            No comments have been posted.
+        </p>
+    }
+    else
+    {
+        foreach(Comment comment in Model.Comments) 
+        {
+            <p>
+                @comment.Text
+            </p>
+        }
+    }
+ </div>
+
+<div>
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.PostId">
+        Edit
+    </a>
 
     <a class="btn btn-success" asp-action="Like"title="Like" asp-route-id="@Model.PostId">
         <i class="bi bi-hand-thumbs-up"></i>
@@ -54,7 +74,7 @@
         <i class="bi bi-hand-thumbs-down"></i>
     </a>
 
-    <a class="btn btn-info" asp-action="Comment" title="Add Comment" asp-route-id="@Model.PostId">
+    <a class="btn btn-info" asp-action="Comments" title="Add Comment" asp-route-id="@Model.PostId">
         <i class="bi bi-chat-dots"></i>
         Comment
     </a>

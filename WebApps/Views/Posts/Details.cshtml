@@ -18,7 +18,42 @@
         </dd>
     </dl>
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.PostId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (Model.Comments == null || Model.Comments.Count() == 0)
+    {
+        <p>
+            No comments have been posted.
+        </p>
+    }
+    else
+    {
+        foreach (Comment comment in Model.Comments)
+        {
+            <p>
+                @comment.Text
+            </p>
+        }
+    }
+</div>
+
+<div>
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.PostId">
+        Edit
+    </a>
+
+    <a class="btn btn-success" asp-action="Like" title="Like" asp-route-id="@Model.PostId">
+        <i class="bi bi-hand-thumbs-up"></i>
+    </a>
+
+    <a class="btn btn-warning" asp-action="Unlike" title="Unlike" asp-route-id="@Model.PostId">
+        <i class="bi bi-hand-thumbs-down"></i>
+    </a>
+
+    <a class="btn btn-info" asp-controller="Comments" asp-action="Create" title="Add Comment" asp-route-id="@Model.PostId">
+        <i class="bi bi-chat-dots"></i>
+        Comment
+    </a>
+
+    <a class="btn btn-info" asp-action="Index">Back to Photo List</a>
 </div>

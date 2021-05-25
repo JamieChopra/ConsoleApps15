@@ -19,6 +19,9 @@ namespace WebApps.Models
         //Timestamp of the message
         public DateTime Timestamp { get; set; }
 
+        //Linking posts to comments
+        public virtual ICollection<Comment> Comments { get; set; }
+
         //Constructor initializing likes, timestamp and a post id
         public Post() 
         {
