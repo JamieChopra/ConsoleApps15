@@ -8,6 +8,8 @@ namespace ConsoleAppProject.App04
 {
     public class NetworkApp
     {
+        private NewsFeed news = new NewsFeed();
+
         /**
          * Displays a menu of choices, uses boolean to determine when
          * a user decides to quit the application.
@@ -39,7 +41,7 @@ namespace ConsoleAppProject.App04
 
         private void PrintAll()
         {
-            throw new NotImplementedException();
+            news.Display();
         }
 
         private void PostImage()

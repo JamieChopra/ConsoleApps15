@@ -29,5 +29,15 @@ namespace ConsoleAppProject.App04
         {
             Message = text;
         }
+
+        /**
+         * Overrides the display method and adds message to it
+         */
+        public override void Display() 
+        {
+            Console.WriteLine($"    Message: {Message}");
+
+            base.Display();
+        }
     }
 }

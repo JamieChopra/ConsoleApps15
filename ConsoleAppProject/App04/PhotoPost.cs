@@ -39,5 +39,16 @@ namespace ConsoleAppProject.App04
             this.Filename = filename;
             this.Caption = caption;
         }
+
+        /**
+         * Overrides the display method and adds Filename and Caption to it
+         */
+        public override void Display() 
+        {
+            Console.WriteLine($"    Filename: [{Filename}]");
+            Console.WriteLine($"    Caption: [{Caption}]");
+
+            base.Display();
+        }
     }
 }
