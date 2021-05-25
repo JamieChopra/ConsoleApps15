@@ -13,7 +13,12 @@ namespace WebApps.Data
             : base(options)
         {
         }
-
+        //App 03 : Student Grades
         public DbSet<Student> Students { get; set; }
+
+        //App 04 : 
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<MessagePost> Messages { get; set; }
+        public DbSet<PhotoPost> Photos { get; set; }
     }
 }
