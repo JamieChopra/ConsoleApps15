@@ -7,7 +7,7 @@ namespace WebApps.Models
     public class Post
     {
         //Stores number of likes
-        public int likes { get; set; }
+        public int Likes { get; set; }
 
         //Primary key
         public int PostId { get; set; }
@@ -23,7 +23,7 @@ namespace WebApps.Models
         public Post() 
         {
             Timestamp = DateTime.Now;
-            likes = 0;
+            Likes = 0;
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace WebApps.Models
         /// </summary>
         public void Like()
         {
-            likes++;
+            Likes++;
         }
 
         ///<summary>
@@ -39,9 +39,9 @@ namespace WebApps.Models
         ///</summary>
         public void Unlike()
         {
-            if (likes > 0)
+            if (Likes > 0)
             {
-                likes--;
+                Likes--;
             }
         }
 

@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<header class="text-center jumbotron justify-content-center">
+    <h1>Posts</h1>
+</header>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Create Post</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.Username)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PostId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PostId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.PostId">Edit</a> 
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PostId">Details</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
             </td>
         </tr>
 }

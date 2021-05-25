@@ -3,22 +3,31 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<header class="text-center jumbotron justify-content-center">
+<h1>Message Posts</h1>
+</header>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Add Message</a>
+    <a class="btn btn-info" asp-action="Index" asp-controller="PhotoPosts">View Photos</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Message)
+                @Html.DisplayNameFor(model => model.PostId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Likes)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -37,9 +46,12 @@
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PostId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PostId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                @Html.DisplayFor(modelItem => item.Likes)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.PostId">Edit</a> 
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PostId">Details</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
             </td>
         </tr>
 }
