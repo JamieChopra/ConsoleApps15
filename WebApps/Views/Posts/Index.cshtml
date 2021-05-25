@@ -4,29 +4,112 @@
     ViewData["Title"] = "Index";
 }
 <header class="text-center jumbotron justify-content-center">
-    <h1>Posts</h1>
+    <h1>Social Networking App</h1>
+    <h2>by Jamie Chopra</h2>
+    <h2>Posts</h2>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find by name:
+                <input type="text" name="userName" />
+                <input type="submit" name="Search" class="btn btn-success" />
+                <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+            </p>
+        </div>
+    </form>
 </header>
 <p>
-    <a class="btn btn-success" asp-action="Create">Create Post</a>
+    <a class="btn btn-info" asp-action="Index" asp-controller="MessagePosts">View Messages</a>
+    <a class="btn btn-info" asp-action="Index" asp-controller="PhotoPosts">View Photos</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Username)
+                PostID
             </th>
-            <th></th>
+            <th>
+                User
+            </th>
+            <th>
+                Message
+            </th>
+            <th>
+                Photo
+            </th>
+            <th>
+                Caption
+            </th>
+            <th>
+                Likes
+            </th>
+            <th>
+                Timestamp
+            </th>
+
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
+
+    MessagePost message = null;
+    PhotoPost photo = null;
+
+    if(item is MessagePost)
+    {
+        message = (MessagePost)item;
+    }
+    if (item is PhotoPost)
+    {
+        photo = (PhotoPost)item;
+    }
+
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Username)
             </td>
             <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.PostId">Edit</a> 
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PostId">Details</a> 
+                @if (message != null)
+                {
+                    <span>@message.Message</span>
+                }
+                else 
+                {
+                    <span>Null</span>
+                }
+            </td>
+            <td>
+                @if (photo != null)
+                {
+                    <span>@photo.Filename</span>
+                }
+                else
+                {
+                    <span>Null</span>
+                }
+            </td>
+            <td>
+                @if (photo != null)
+                {
+                    <span>@photo.Caption</span>
+                }
+                else
+                {
+                    <span>Null</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Likes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.PostId">Edit</a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PostId">Details</a>
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
             </td>
         </tr>

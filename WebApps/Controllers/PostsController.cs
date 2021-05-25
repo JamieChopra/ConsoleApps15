@@ -19,10 +19,25 @@ namespace WebApps.Controllers
             _context = context;
         }
 
-        // GET: Posts
-        public async Task<IActionResult> Index()
+        // GET: Posts in order based on timestamp
+        //Filters posts based upon string input
+        public async Task<IActionResult> Index(string userName)
         {
-            return View(await _context.Posts.ToListAsync());
+            //var posts = await _context.Posts
+            //   .OrderByDescending(a => a.Timestamp)
+            // .ToListAsync();
+
+            var posts = from p in _context.Posts
+                        select p;
+            
+            if(!String.IsNullOrEmpty(userName))
+            {
+                //posts = (List<Post>)posts
+                posts = posts
+                    .Where(u => u.Username == userName);
+            }
+            //return View(posts);
+            return View(await posts.ToListAsync());
         }
 
         // GET: Posts/Details/5
@@ -35,6 +50,7 @@ namespace WebApps.Controllers
 
             var post = await _context.Posts
                 .FirstOrDefaultAsync(m => m.PostId == id);
+
             if (post == null)
             {
                 return NotFound();
