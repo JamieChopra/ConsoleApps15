@@ -40,6 +40,12 @@ namespace ConsoleAppProject
 
                 int choiceNo = ConsoleHelper.SelectChoice(choices);
 
+                /**
+                 * Uses if statements and a while loop and list of strings to allow user to
+                 * decide on which application they wish to use based upon their inputted number
+                 * 1-4
+                 * 5 Is a Quit choice which will break the loop and end the application
+                 */
 
                 if (choiceNo == 1)
                 {
@@ -68,17 +74,6 @@ namespace ConsoleAppProject
                     Console.WriteLine("\nYou have entered an invalid choice");
                 }
             }
-            
-            /**
-            // Using an extension method for each enumeration
-            Console.WriteLine("Using MyEnum Extension Method!\n");
-            Console.WriteLine("MyEnum Value = " + MyEnum.FirstValue);
-            Console.WriteLine("MyEnum Friendly Value = " + MyEnum.FirstValue.EnumValue());
-            Console.WriteLine();
-            */
-
-           
-
         }
     }
 }

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ConsoleAppProject.App01.DistanceConverter">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <AssociationLine Name="DistanceUnits" Type="ConsoleAppProject.App01.DistanceUnits">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.473" Y="0.06" Height="0.182" Width="1.37" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAgAwIAAAEAAACmAAABAACAIEAAAAgAAAQBAIA=</HashCode>
+      <FileName>App01\DistanceConverter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DistanceUnits" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ConsoleAppProject.ConsoleHelper">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleAppProject.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="DistanceConverter" Type="ConsoleAppProject.App01.DistanceConverter">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.317" Y="0.07" Height="0.182" Width="1.412" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DistanceConverter" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ConsoleAppProject.App01.DistanceUnits">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAkAAAgAABAAAAAAAAA=</HashCode>
+      <FileName>App01\DistanceUnits.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
