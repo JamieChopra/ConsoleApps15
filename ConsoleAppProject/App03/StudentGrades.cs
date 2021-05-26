@@ -35,11 +35,20 @@ namespace ConsoleAppProject.App03
         public int Minimum { get; set; }
         //Int used to store maximum mark
         public int Maximum { get; set; }
+
+        public Grades Grades
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /*
-         * Constructor to create a new students list and added 10 students
-         * Gradeprofile added utilising Grades enumeration
-         * New list of marks created to match the length of the students list
-         */
+* Constructor to create a new students list and added 10 students
+* Gradeprofile added utilising Grades enumeration
+* New list of marks created to match the length of the students list
+*/
         public StudentGrades()
         {
             Students = new string[]

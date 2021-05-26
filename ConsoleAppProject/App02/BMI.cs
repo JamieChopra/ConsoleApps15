@@ -65,9 +65,9 @@ namespace ConsoleAppProject.App02
 
             Console.WriteLine("\nYour current BMI is " + BMIResult);
 
-            GetHealthMessage();
+            GetHealthMessageApp();
 
-            BAMEMessage();
+            BAMEMessageApp();
 
             WHOStatus();
         }
@@ -206,6 +206,18 @@ namespace ConsoleAppProject.App02
           
             return message.ToString();
         }
+
+        /**
+         * Prints message warning certain ethnicities about their risk at
+         * a high BMI (Used in Console Application)
+         */
+        public void BAMEMessageApp()
+        {
+                Console.WriteLine($"\nIf you are Black, Asian or any and other ");
+                Console.WriteLine("minority ethnic groups, or pregnant with a BMI over 25 ");
+                Console.WriteLine("then your BMI is putting you at a high health risk.");
+        }
+
         /**
          * Prints the WhoStatus for BMI results (used in Console Application)
          */
@@ -253,6 +265,37 @@ namespace ConsoleAppProject.App02
                 message.Append($"Your BMI is {BMIResult}, You are in obese class 3.");
             }
             return message.ToString();
+        }
+
+        /**
+         * Prints health message based upon their BMI result (Used in Console Application)
+         */
+        public void GetHealthMessageApp()
+        {
+            if (BMIResult < 18.50)
+            {
+                Console.WriteLine($"\nYou are underweight.");
+            }
+            else if (BMIResult >= 18.5 && BMIResult < 25)
+            {
+                Console.WriteLine($"\nYou are a normal weight.");
+            }
+            else if (BMIResult >= 20 && BMIResult < 30)
+            {
+                Console.WriteLine($"\nYou are overweight.");
+            }
+            else if (BMIResult >= 30 && BMIResult < 35)
+            {
+                Console.WriteLine($"\nYou are in obese class 1.");
+            }
+            else if (BMIResult >= 35 && BMIResult < 40)
+            {
+                Console.WriteLine($"\nYou are in obese class 2.");
+            }
+            else if (BMIResult >= 40)
+            {
+                Console.WriteLine($"\nYou are in obese class 3.");
+            }
         }
 
     }

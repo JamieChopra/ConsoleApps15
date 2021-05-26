@@ -13,6 +13,7 @@ namespace ConsoleAppProject.App04
     {
         private NewsFeed news = new NewsFeed();
 
+
         /**
          * Displays a menu of choices, uses boolean to determine when
          * a user decides to quit the application.
