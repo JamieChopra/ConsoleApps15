@@ -6,11 +6,16 @@ using System.ComponentModel.DataAnnotations;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
-    /// At the moment this class just tests the
-    /// Grades enumeration names and descriptions
+    /// This application allows a list of marks to be added to a list of students
+    /// and converts their marks into grades based upon their boundary.
+    /// It also calculates and prints the mean mark, maximum mark and minimum mark.
     /// </summary>
+    /// <author>
+    /// Jamie Chopra version 0.1
+    /// </author>
     public class StudentGrades
     {
+        //Constants to store the values of each grade boundary
         public const int LowestMark = 0;
         public const int LowestGradeD = 40;
         public const int LowestGradeC = 50;
@@ -18,14 +23,23 @@ namespace ConsoleAppProject.App03
         public const int LowestGradeA = 70;
         public const int HighestMark = 100;
 
-
+        //String list to store student names
         public string[] Students { get; set; }
+        //Int list to store student marks
         public int[] Marks { get; set; }
+        //Int list to store students grade
         public int[] GradeProfile { get; set; }
+        //Double used to store mean
         public double Mean { get; set; }
+        //Int used to store minimum mark
         public int Minimum { get; set; }
+        //Int used to store maximum mark
         public int Maximum { get; set; }
-
+        /*
+         * Constructor to create a new students list and added 10 students
+         * Gradeprofile added utilising Grades enumeration
+         * New list of marks created to match the length of the students list
+         */
         public StudentGrades()
         {
             Students = new string[]
@@ -131,6 +145,10 @@ namespace ConsoleAppProject.App03
             }
         }
 
+
+        /**
+         * Goes through the list of grades and calculates their percentage
+         */
         private void OutputGradeProfile()
         {
             Grades grade = Grades.X;
@@ -145,6 +163,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /**
+         * Outputs (prints) the minimum, maximum and mean marks.
+         */
         public void OutputStats()
         {
             CalculateStats();
@@ -153,6 +174,9 @@ namespace ConsoleAppProject.App03
             Console.WriteLine("\nThe Mean mark is: " + Mean);
         }
 
+        /**
+         * Method created to test the use of the enumeration
+         */
         public void TestGradesEnumeration()
         {
             Grades grade = Grades.C;
@@ -177,6 +201,10 @@ namespace ConsoleAppProject.App03
 
         }
 
+        /**
+         * Method with a while loop to allow user to choose between the method they want to use
+         * Quit option breaks the loop and returns the user back to the list of applications.
+         */
         public void ChooseMethod() 
         {
 

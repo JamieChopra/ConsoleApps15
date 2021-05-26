@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+///<author>
+///  Jamie Chopra
+///  version 0.1
+///</author> 
 namespace ConsoleAppProject.App04
 {
     public class NetworkApp
@@ -38,7 +41,9 @@ namespace ConsoleAppProject.App04
                 }
             } while (!wantToQuit);
         }
-
+        /**
+         * Prints all posts
+         */
         private void PrintAll()
         {
             news.Display();

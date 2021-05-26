@@ -15,7 +15,7 @@ namespace ConsoleAppProject.App04
     /// search or ordering functions.
     ///</summary>
     ///<author>
-    ///  Michael Kölling and David J. Barnes
+    ///  Jamie Chopra
     ///  version 0.1
     ///</author> 
     public class NewsFeed

@@ -5,11 +5,12 @@ namespace ConsoleAppProject.App04
 {
     public class Post
     {
+        //Stores likes count
         private int likes;
-
+        //Stores comments in a list
         private readonly List<String> comments;
 
-        // username of the post's author
+        // Username of the post's author
         public String Username { get; }
 
         //Timestamp of the message

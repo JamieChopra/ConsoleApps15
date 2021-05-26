@@ -12,7 +12,7 @@ namespace WebApps.Models
         public int CommentID { get; set; }
         //Foreign Key
         public int PostId { get; set; }
-
+        //Stores text in comment
         [DataType(DataType.MultilineText)]
         public string Text { get; set; }
 

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+/// <author>
+/// Jamie Chopra
+/// @version 0.1
+/// </author>
 namespace WebApps.Models
 {
     public class Post

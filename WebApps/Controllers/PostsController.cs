@@ -30,7 +30,7 @@ namespace WebApps.Controllers
             var posts = from p in _context.Posts
                         select p;
             
-            if(!String.IsNullOrEmpty(userName))
+            `if(!String.IsNullOrEmpty(userName))
             {
                 //posts = (List<Post>)posts
                 posts = posts
