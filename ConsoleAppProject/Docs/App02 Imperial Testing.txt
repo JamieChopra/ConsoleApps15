@@ -1,0 +1,682 @@
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 0
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 0
+
+Please input the number of Pounds: 0
+
+Your current BMI is NaN
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 6
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 9
+
+Please input the number of Pounds: 9
+
+Your current BMI is 18.307291666666668
+
+You are underweight.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 6
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 10
+
+Please input the number of Pounds: 0
+
+Your current BMI is 18.98533950617284
+
+You are a normal weight.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 6
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 12
+
+Please input the number of Pounds: 12
+
+Your current BMI is 24.40972222222222
+
+You are a normal weight.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 6
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 13
+
+Please input the number of Pounds: 3
+
+Your current BMI is 25.087770061728396
+
+You are overweight.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 6
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 15
+
+Please input the number of Pounds: 5
+
+Your current BMI is 29.156057098765434
+
+You are overweight.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 11
+
+Please input the number of Pounds: 1
+
+Your current BMI is 30.268055555555556
+
+You are in obese class 1.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 12
+
+Please input the number of Pounds: 7
+
+Your current BMI is 34.173611111111114
+
+You are in obese class 1.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 12
+
+Please input the number of Pounds: 12
+
+Your current BMI is 35.15
+
+You are in obese class 2.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 14
+
+Please input the number of Pounds: 4
+
+Your current BMI is 39.05555555555556
+
+You are in obese class 2.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 14
+
+Please input the number of Pounds: 9
+
+Your current BMI is 40.03194444444444
+
+You are in obese class 3.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
+
+=============================
+    BNU CO453 Applications Programming 2020-2021!
+
+       by Jamie Chopra
+=============================
+
+ 1. Distance Converter
+
+ 2. BMI Calculator
+
+ 3. Student Grades
+
+ 4. Social Network
+
+ 5. Quit
+
+Please enter your choice > 2
+
+=============================
+    BMI Calculator
+       by Jamie Chopra
+=============================
+
+ 1. Feet and Stone
+ 2. Metres and Kilograms
+
+1
+
+You are now calculating BMI using Feet and Stone
+
+Please input the number of Feet: 5
+
+Please input the number of Inches: 0
+
+Please input the number of Stone: 18
+
+Please input the number of Pounds: 0
+
+Your current BMI is 49.21
+
+You are in obese class 3.
+
+If you are Black, Asian or any and other
+minority ethnic groups, or pregnant with a BMI over 25
+then your BMI is putting you at a high health risk.
+
+=================================
+WHO WEIGHT STATUS===BMI kg/m2
+    Underweight || < 18.50
+         Normal || 18.5 - 24.9
+     Overweight || 25.0 - 29.9
+  Obese Class 1 || 30.0 - 34.9
+  Obese Class 2 || 35.0 - 39.9
+  Obese Class 3 || >= 40.0
+=================================
+
